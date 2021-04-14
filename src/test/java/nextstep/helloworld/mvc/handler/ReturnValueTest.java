@@ -32,7 +32,7 @@ public class ReturnValueTest {
     @Test
     void string() {
         RestAssured.given().log().all()
-                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .accept(MediaType.TEXT_HTML_VALUE)
                 .when().get("/return-value/message")
                 .then().log().all()
                 .statusCode(HttpStatus.OK.value())
