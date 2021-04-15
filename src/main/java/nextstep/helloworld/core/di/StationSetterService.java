@@ -1,12 +1,14 @@
 package nextstep.helloworld.core.di;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class StationSetterService {
     private StationRepository stationRepository;
 
-    public StationSetterService(StationRepository stationRepository) {
+    @Autowired
+    public void setStationRepository(StationRepository stationRepository) {
         this.stationRepository = stationRepository;
     }
 

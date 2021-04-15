@@ -1,7 +1,7 @@
 package nextstep.helloworld.core.scan;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class LineDao {
 }
