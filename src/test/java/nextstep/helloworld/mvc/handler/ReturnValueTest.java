@@ -61,7 +61,7 @@ public class ReturnValueTest {
     @Test
     void responseEntity() {
         RestAssured.given().log().all()
-                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .accept(MediaType.ALL_VALUE)
                 .when().get("/return-value/users/1")
                 .then().log().all()
                 .statusCode(HttpStatus.OK.value())
