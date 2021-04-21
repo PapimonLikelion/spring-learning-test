@@ -29,6 +29,7 @@ public class ComponentScanTest {
     private ApplicationContext getApplicationContext() {
         ApplicationContext context = new AnnotationConfigApplicationContext(HelloApplication.class);
         String[] beanDefinitionNames = context.getBeanDefinitionNames();
+        System.out.print("등록된 빈들: ");
         System.out.println(Arrays.toString(beanDefinitionNames));
         return context;
     }
