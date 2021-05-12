@@ -5,6 +5,7 @@ import nextstep.helloworld.mvcconfig.dto.FavoriteResponse;
 import nextstep.helloworld.mvcconfig.dto.MemberResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
@@ -12,6 +13,14 @@ import java.util.List;
 
 @RestController
 public class MvcConfigController {
+
+    @GetMapping("/")
+    //Controller에 URL이 매핑되어 있다면 이게 우선순위
+    //이게 없다면 전역으로 ViewController에서 처리해줄 수 있음
+    //지금은 이거때매 테스트 깨짐
+    public ResponseEntity<String> testWithBada() {
+        return ResponseEntity.status(303).build();
+    }
 
     @GetMapping("/members/me")
     public ResponseEntity<LoginMember> findMemberOfMine(@AuthenticationPrincipal LoginMember loginMember) {
@@ -46,3 +55,4 @@ public class MvcConfigController {
 
 
 }
+
